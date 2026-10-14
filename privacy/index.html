@@ -58,6 +58,7 @@
         <h1>TAIPOPO 개인정보처리방침</h1>
         <div class="summary" aria-label="정책 기본 정보">
           <p>시행일: <code>2026-08-23</code></p>
+          <p>최종 수정일: <code>2026-10-14</code> · Drive 백업 삭제 및 휴지통 보관기간 안내 현행화</p>
           <p>개인정보처리자·개인정보 보호책임자: <code>개인 개발자 홍종근</code></p>
           <p>일반 문의 및 개인정보 열람·삭제 요청: <a href="mailto:taipopo.app@gmail.com">taipopo.app@gmail.com</a></p>
         </div>
@@ -118,7 +119,7 @@
           <li>앱은 사용자가 백업 또는 복원을 선택하지 않은 상태에서 근태·사진·정산 데이터를 Google Drive로 업로드하지 않습니다.</li>
           <li>백업에는 원본 사진·위치·촬영 시각·기기 메타데이터, 근무지·주소·근태·급여·정산·메모 등 앱 데이터의 전체 또는 일부 사본이 포함될 수 있습니다.</li>
           <li>로컬 데이터 초기화, 앱 삭제 또는 Google 연결 해제는 기존 Google Drive 백업을 자동으로 삭제하지 않습니다.</li>
-          <li>로컬 데이터 초기화와 Google 연결 해제는 Drive 백업 삭제와 별개입니다. 현재 앱 화면에는 Drive 백업을 직접 삭제하는 기능이 없습니다. <code>appDataFolder</code>는 일반 Drive 파일 목록에서 직접 열람·공유할 수 없는 공간이므로, 백업 삭제 또는 삭제 확인이 필요하면 <a href="mailto:taipopo.app@gmail.com">taipopo.app@gmail.com</a>으로 문의할 수 있습니다.</li>
+          <li>로컬 데이터 초기화와 Google 연결 해제는 Drive 백업 삭제와 별개입니다. 앱의 Google Drive 백업 관리 화면에서 백업을 선택하고 삭제를 확인하면 해당 백업을 삭제할 수 있습니다. 연결된 Google 계정과 삭제 대상을 확인해 주세요. <code>appDataFolder</code>는 일반 Drive 파일 목록에서 직접 열람·공유할 수 없는 공간입니다. 백업 삭제 또는 삭제 확인에 도움이 필요하면 <a href="mailto:taipopo.app@gmail.com">taipopo.app@gmail.com</a>으로 문의할 수 있습니다.</li>
           <li>앱의 관리형 retention 처리 외에 사용자 백업에 대한 고정 보유일수 정책은 확정되어 있지 않습니다. 중요한 사본은 사용자가 직접 관리해야 합니다.</li>
         </ul>
         <p>백업 ZIP과 Drive 백업에 앱 수준 암호화가 적용되어 있다고 확인되지 않았습니다. 따라서 백업 파일을 암호화된 저장 매체나 신뢰할 수 있는 계정에 보관할 책임은 사용자에게 있습니다.</p>
@@ -153,8 +154,8 @@
         <h2>9. 보유·삭제 및 사용자의 권리</h2>
         <p>사용자는 앱에서 자신의 로컬 기록을 조회·수정·삭제하고 Android 설정에서 권한을 변경하거나 철회할 수 있습니다.</p>
         <ul>
-          <li>사진은 삭제 후 휴지통에서 복원하거나 영구 삭제할 수 있습니다. 사진 휴지통은 최대 30일 보관 후 정리될 수 있습니다.</li>
-          <li>메모, 근무지, 정산, 리포트 등은 각 기능의 삭제·휴지통·영구 삭제 기능 또는 전체 데이터 초기화를 통해 관리할 수 있습니다. 사진 외 항목의 고정 자동 보유기간은 확정되어 있지 않습니다.</li>
+          <li>사진, 메모, 근무지, 정산, 리포트 등 휴지통으로 이동한 항목은 복원하거나 영구 삭제할 수 있습니다. 삭제일로부터 30일이 지난 항목은 이후 휴지통을 열 때 영구 삭제되며, 영구 삭제 후에는 앱의 휴지통에서 복원할 수 없습니다. 사용자가 직접 영구 삭제하면 30일 전에도 삭제됩니다.</li>
+          <li>삭제일 정보가 없는 기존 항목은 기간에 따른 자동 삭제 대상에서 제외됩니다. 다른 기록에서 사용 중인 사진은 삭제 과정에서 보호되며, 데이터 복구 중이거나 기록을 정상적으로 불러오지 못한 경우에는 자동 정리가 보류될 수 있습니다.</li>
           <li>전체 데이터 초기화는 기기 내 앱 설정, 로컬 데이터베이스, 사진, PDF, 리포트, 내보내기 및 로컬 백업 관련 데이터를 삭제합니다.</li>
           <li>Google Drive 백업, 외부 공유·다운로드본 및 Firebase Crashlytics에 이미 전송된 진단 정보는 위 로컬 삭제 범위와 별개입니다.</li>
           <li>개인정보 열람·삭제 요청이나 관련 문의는 <a href="mailto:taipopo.app@gmail.com">taipopo.app@gmail.com</a>으로 보낼 수 있습니다.</li>
@@ -173,7 +174,7 @@
           <table>
             <thead><tr><th>서비스</th><th>기술적 처리 사실</th><th>발생 시점</th></tr></thead>
             <tbody>
-              <tr><td>Google Drive·Google Sign-In</td><td>사용자가 선택한 Google 계정 인증과 <code>appDataFolder</code> 백업·복원</td><td>사용자가 연결·백업·복원을 시작할 때</td></tr>
+              <tr><td>Google Drive·Google Sign-In</td><td>사용자가 선택한 Google 계정 인증과 <code>appDataFolder</code> 백업·복원·백업 삭제</td><td>사용자가 연결·백업·복원·백업 삭제를 시작할 때</td></tr>
               <tr><td>Firebase Crashlytics</td><td>오류 진단 정보, 앱·기기·설치·세션 관련 진단 정보</td><td>production 앱에서 오류·장애가 발생할 때</td></tr>
               <tr><td>ML Kit Barcode Scanning</td><td>QR 입력·결과는 기기 내 처리, SDK metrics는 Google로 전송될 수 있음</td><td>QR 스캐너·SDK 기능 사용 시</td></tr>
               <tr><td>Android Sharesheet 및 수신 앱</td><td>사용자가 선택한 사진·PDF·ZIP·리포트 사본</td><td>사용자가 공유를 확정할 때</td></tr>
@@ -198,6 +199,7 @@
         <h2>13. 정책 변경과 시행일</h2>
         <p>법령, 서비스, 데이터 흐름 또는 기능이 변경되면 이 정책을 갱신하고 앱 또는 공개 정책 페이지를 통해 변경 내용을 안내합니다. 이전 버전의 보관·열람 방식은 공개 HTTPS 정책 페이지를 준비할 때 함께 확정합니다.</p>
         <p class="effective-date">시행일: 2026-08-23</p>
+        <p class="effective-date">최종 수정일: 2026-10-14</p>
       </section>
 
       <section>
