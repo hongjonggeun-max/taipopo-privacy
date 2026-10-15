@@ -64,7 +64,7 @@
         </div>
       </header>
 
-      <p>TAIPOPO(이하 "앱")는 근태, 근무지, 사진 증빙, 정산 및 리포트 관리를 위한 local-first 앱입니다. 기본 기록은 사용자의 기기에 저장됩니다. 다만 사용자가 선택적으로 Google Drive 백업·복원 또는 외부 공유를 실행하거나, production 앱에서 장애가 발생하는 경우에는 아래에 설명한 외부 서비스 처리가 발생할 수 있습니다.</p>
+      <p>TAIPOPO(이하 "앱")는 근태, 근무지, 사진 증빙, 정산 및 리포트 관리를 위해 기기 내 저장을 기본으로 하는 앱입니다. 기본 기록은 사용자의 기기에 저장됩니다. 다만 사용자가 선택적으로 Google Drive 백업·복원·삭제 관리 또는 외부 공유를 실행하거나, 위치 좌표를 주소로 변환하거나, 정식 배포 앱에서 Firebase·Crashlytics 관련 SDK가 초기화·동작하는 경우에는 아래에 설명한 외부 서비스 처리가 발생할 수 있습니다.</p>
       <p>이 방침은 앱의 기술적 데이터 흐름과 운영 정보를 반영합니다. Google Drive, Google Sign-In, Firebase Crashlytics 및 ML Kit 등 외부 서비스는 각 서비스의 정책과 처리 범위가 함께 적용될 수 있습니다.</p>
 
       <section>
@@ -77,11 +77,11 @@
               <tr><td>근무지 정보</td><td>근무지명, 주소·상세주소, 담당자명·연락처, 메모, 급여·정산 설정</td><td>사용자가 입력·수정할 때</td><td>기기 내 앱 저장소</td></tr>
               <tr><td>정산·리포트</td><td>수입·지출·청구 항목, 금액, 정산 결과, 리포트 내용</td><td>사용자가 입력하거나 기록을 바탕으로 문서를 생성할 때</td><td>기기 내 앱 저장소 및 사용자가 생성한 문서</td></tr>
               <tr><td>사진·첨부 파일</td><td>원본 사진, 편집 사진, 표시용 이미지, 썸네일 등 파생 이미지, 사용자가 지정한 사진 분류, 사진에 추가한 표시·주석, 촬영 시각, 사진과 연결된 근무지·업무 정보</td><td>카메라·갤러리·편집 기능을 실행할 때</td><td>기기 내 앱 저장소</td></tr>
-              <tr><td>위치·주소</td><td>위치 권한을 허용하고 출퇴근 또는 사진 촬영 기능을 실행할 때의 좌표, 역지오코딩 주소, 근무지 위치 관련 정보</td><td>해당 기능을 실행할 때</td><td>기기 내 앱 저장소 및 사진·리포트 연결 기록</td></tr>
+              <tr><td>위치·주소</td><td>위치 권한을 허용하고 출퇴근 또는 사진 촬영 기능을 실행할 때의 좌표, 주소 변환 결과, 근무지 위치 관련 정보</td><td>해당 기능 및 주소 변환을 실행할 때</td><td>기기 내 앱 저장소 및 사진·리포트 연결 기록. 주소 변환 시 Android 운영체제 서비스가 네트워크를 사용할 수 있음</td></tr>
               <tr><td>메모·자유 입력</td><td>업무 메모, 리포트 메모 및 사용자가 입력한 텍스트</td><td>사용자가 입력할 때</td><td>기기 내 앱 저장소</td></tr>
               <tr><td>PDF·ZIP·내보내기</td><td>리포트, PDF, 로컬 백업 ZIP, 첨부 파일 및 공유용 사본</td><td>사용자가 생성·저장·공유·백업을 실행할 때</td><td>기기 내 앱 저장소, 임시 저장소 또는 사용자가 선택한 대상</td></tr>
               <tr><td>Google Drive 인증·백업</td><td>선택한 Google 계정 관련 인증 흐름, Drive <code>appDataFolder</code>의 백업 파일·파일 식별정보·전송 상태</td><td>사용자가 Google 연결·백업·복원을 실행할 때</td><td>Google 서비스 및 기기 내 전송 상태 기록</td></tr>
-              <tr><td>장애 진단</td><td>민감한 내용을 제거한 오류 코드와 안전하게 정제한 호출 기록, Firebase Crashlytics SDK가 처리할 수 있는 오류·장애 기록 및 설치·세션·기기·앱 실행 관련 진단 정보</td><td>production 앱 오류 또는 장애 시</td><td>Firebase Crashlytics</td></tr>
+              <tr><td>장애 진단</td><td>민감한 내용을 제거한 오류 코드와 안전하게 정제한 호출 기록, Firebase Crashlytics SDK가 자동 처리할 수 있는 설치·세션·기기·앱 실행 관련 정보 및 오류·장애 기록</td><td>정식 배포 앱 실행 시 SDK 초기화 후 자동 처리될 수 있으며 오류·장애 발생 시 관련 기록 처리</td><td>Firebase Crashlytics</td></tr>
               <tr><td>QR 인식</td><td>카메라 영상에서 읽은 QR 값</td><td>사용자가 QR 스캐너를 시작할 때</td><td>스캐너 화면의 메모리. 이후 저장 여부는 해당 기능에서 사용자가 결정</td></tr>
               <tr><td>앱 설정</td><td>기능, 알림, 카메라, 백업 안내 및 보호 관련 설정</td><td>기본값을 생성하거나 사용자가 변경할 때</td><td>기기 내 앱 저장소</td></tr>
             </tbody>
@@ -102,7 +102,7 @@
           <li>오류 진단 및 앱 안정성 개선</li>
           <li>QR 인식 기능 제공</li>
         </ul>
-        <p>위치 정보는 사용자가 Android 위치 권한을 허용하고 출퇴근 또는 사진 촬영 기능을 실행하는 경우에만 사용합니다. 위치 정보는 광고 또는 프로파일링 목적으로 사용하지 않습니다.</p>
+        <p>위치 정보는 사용자가 Android 위치 권한을 허용하고 출퇴근 또는 사진 촬영 기능을 실행하는 경우에만 사용합니다. 위치 정보는 광고 또는 프로파일링 목적으로 사용하지 않습니다. 앱은 좌표를 주소로 변환하기 위해 Android 운영체제의 <code>Geocoder</code> 서비스를 호출하며, 기기와 운영체제 구성에 따라 이 과정에서 네트워크가 사용될 수 있습니다. 앱 코드만으로 실제 주소 변환 서비스 제공자·처리 국가·보유기간을 특정할 수 없습니다.</p>
       </section>
 
       <section>
@@ -121,7 +121,7 @@
           <li>Google Drive 백업은 하나의 ZIP 파일 또는 여러 파일로 나뉜 백업으로 구성될 수 있으며, 사진, 위치·주소, 근무 기록, 정산, 리포트, 설정 및 앱 데이터가 포함될 수 있습니다. 여기에는 원본 사진·촬영 시각·기기 메타데이터·급여·메모 등 앱 데이터의 전체 또는 일부 사본이 포함될 수 있습니다.</li>
           <li>로컬 데이터 초기화, 앱 삭제 또는 Google 연결 해제는 기존 Google Drive 백업을 자동으로 삭제하지 않습니다.</li>
           <li>로컬 데이터 초기화와 Google 연결 해제는 Drive 백업 삭제와 별개입니다. 앱의 Google Drive 백업 관리 화면에서 백업을 선택하고 삭제를 확인하면 해당 백업을 삭제할 수 있습니다. 연결된 Google 계정과 삭제 대상을 확인해 주세요. <code>appDataFolder</code>는 일반 Drive 파일 목록에서 직접 열람·공유할 수 없는 공간입니다. 백업 삭제 또는 삭제 확인에 도움이 필요하면 <a href="mailto:taipopo.app@gmail.com">taipopo.app@gmail.com</a>으로 문의할 수 있습니다.</li>
-          <li>앱의 관리형 retention 처리 외에 사용자 백업에 대한 고정 보유일수 정책은 확정되어 있지 않습니다. 중요한 사본은 사용자가 직접 관리해야 합니다.</li>
+          <li>완료된 백업을 일수나 개수 기준으로 자동 삭제하지 않습니다. 완료된 백업은 사용자가 Google Drive 백업 관리에서 특정 백업을 선택하고 삭제를 확인할 때 삭제됩니다.</li>
         </ul>
         <p>백업 ZIP과 Drive 백업에 앱 수준 암호화가 적용되어 있다고 확인되지 않았습니다. 따라서 백업 파일을 암호화된 저장 매체나 신뢰할 수 있는 계정에 보관할 책임은 사용자에게 있습니다.</p>
       </section>
@@ -134,7 +134,8 @@
 
       <section>
         <h2>6. Firebase Crashlytics</h2>
-        <p>production 앱은 앱 안정성 및 오류 진단을 위해 Firebase Crashlytics를 사용합니다. 앱이 직접 기록하는 진단 정보에는 민감한 내용을 제거한 오류 코드와 안전하게 정제한 호출 기록이 사용됩니다. Firebase SDK는 오류·장애 기록과 설치·세션·기기·앱 실행 관련 진단 정보를 처리할 수 있습니다. 앱이 직접 전달하는 오류 경로는 사용자 입력, 파일 경로, 위치, 금액, 계정 식별자가 포함되지 않도록 정제합니다.</p>
+        <p>정식 배포 앱에서는 앱 실행 시 Firebase와 Crashlytics 관련 SDK가 초기화되어 앱 안정성 및 오류 진단에 사용됩니다. 오류 발생 여부와 별개로 Firebase Installations와 Sessions 등 종속 SDK가 설치 식별자, 앱·운영체제·네트워크 연결 유형, 기기 제조사·모델 및 앱 세션 관련 정보를 자동으로 처리할 수 있습니다. 오류·장애가 발생하면 Crashlytics가 관련 호출 기록, 앱 상태와 기기 메타데이터를 처리할 수 있습니다.</p>
+        <p>앱이 직접 전달하는 오류 경로는 사용자 입력, 파일 경로, 위치, 금액, 계정 식별자가 포함되지 않도록 민감한 내용을 제거한 오류 코드와 안전하게 정제한 호출 기록을 사용합니다.</p>
         <p>Firebase의 공식 안내에 따르면 Crashlytics는 Crashlytics Installation UUID, Firebase Installation ID, 세션 식별자, 앱 버전, 운영체제 및 기기 관련 정보를 진단 목적으로 처리할 수 있습니다. Firebase의 공식 안내에 따르면 Crashlytics는 장애 발생 당시의 호출 기록과 관련 식별자를 90일간 보관한 뒤, 운영 중인 시스템과 백업 시스템에서 삭제하는 절차를 시작합니다.</p>
         <p>앱의 로컬 데이터를 초기화하거나 앱을 삭제해도, 이미 Firebase Crashlytics로 전송된 진단 정보는 자동으로 삭제되지 않습니다. 관련 문의 및 삭제 요청은 <a href="mailto:taipopo.app@gmail.com">taipopo.app@gmail.com</a>으로 접수할 수 있으며, 실제 처리 범위와 절차는 Firebase의 기능과 정책에 따릅니다.</p>
       </section>
@@ -170,19 +171,20 @@
 
       <section>
         <h2>11. 외부 서비스 안내</h2>
-        <p>다음 표는 앱에서 사용하는 외부 서비스의 기술적 처리 사실과 발생 시점을 정리한 것입니다.</p>
+        <p>다음 표는 앱 구현과 서비스 운영자의 공식 공개자료에서 확인되는 기술적 사실을 정리한 것입니다. 대한민국 개인정보보호법상 법적 분류와 필요한 고지·동의 방식은 별도 검토가 필요합니다.</p>
         <div class="table-wrap" tabindex="0">
           <table>
-            <thead><tr><th>서비스</th><th>기술적 처리 사실</th><th>발생 시점</th></tr></thead>
+            <thead><tr><th>서비스</th><th>처리 항목·목적</th><th>확인된 수신자·연락처</th><th>처리 국가</th><th>전송 시점·방법</th><th>보유기간</th><th>거부·중단 방법</th></tr></thead>
             <tbody>
-              <tr><td>Google Drive·Google Sign-In</td><td>사용자가 선택한 Google 계정 인증과 <code>appDataFolder</code> 백업·복원·백업 삭제</td><td>사용자가 연결·백업·복원·백업 삭제를 시작할 때</td></tr>
-              <tr><td>Firebase Crashlytics</td><td>오류 진단 정보, 앱·기기·설치·세션 관련 진단 정보</td><td>production 앱에서 오류·장애가 발생할 때</td></tr>
-              <tr><td>ML Kit Barcode Scanning</td><td>QR 입력·결과는 기기 내 처리, SDK metrics는 Google로 전송될 수 있음</td><td>QR 스캐너·SDK 기능 사용 시</td></tr>
-              <tr><td>Android Sharesheet 및 수신 앱</td><td>사용자가 선택한 사진·PDF·ZIP·리포트 사본</td><td>사용자가 공유를 확정할 때</td></tr>
+              <tr><td>Google Drive·Google Sign-In</td><td>선택한 Google 계정 인증, 승인 범위, <code>appDataFolder</code> 백업 파일·식별정보를 인증·백업·복원·삭제 관리에 사용</td><td>Google LLC · <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a> · <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></td><td>Google LLC는 미국 소재이며 Google은 전 세계 서버에서 처리될 수 있다고 안내함. 개별 국가는 특정되지 않음</td><td>사용자가 연결·백업·복원·삭제를 실행할 때 OAuth·Drive API로 전송</td><td>완료된 백업은 자동 삭제하지 않으며 사용자가 특정 백업 삭제를 확인할 때까지 유지될 수 있음. 이후 Google 정책 적용</td><td>기능을 사용하지 않거나 연결 해제·Google 계정 접근 권한 철회 가능. 연결 해제만으로 기존 백업은 삭제되지 않음</td></tr>
+              <tr><td>Firebase Crashlytics·종속 SDK</td><td>정제된 앱 오류 코드·호출 기록, 오류·장애 기록, 앱 상태, 설치 식별자, 세션·기기·앱 실행 관련 진단 정보를 안정성·오류 진단에 사용</td><td>Google LLC/Firebase 및 <a href="https://firebase.google.com/terms/subprocessors">공개된 하위처리자</a> · <a href="https://firebase.google.com/support/">Firebase 지원</a></td><td>Google LLC는 미국 소재이며 글로벌 인프라와 공개된 하위처리자가 사용될 수 있음. 개별 국가는 특정되지 않음</td><td>정식 배포 앱 실행 시 SDK가 초기화되고 관련 정보가 자동 처리될 수 있으며, 오류·장애 발생 시 관련 기록을 HTTPS로 전송</td><td>장애 호출 기록과 관련 식별자는 90일 보관 후 운영·백업 시스템에서 삭제 절차 시작. Firebase Installation ID에는 별도 정책 적용</td><td>앱에 Crashlytics만 별도로 끄는 설정은 없음. 앱 이용 중단·삭제로 이후 실행을 중단할 수 있으나 이미 전송된 정보는 자동 삭제되지 않음</td></tr>
+              <tr><td>ML Kit Barcode Scanning</td><td>QR 입력·결과는 기기 내 처리. SDK가 기기·앱 정보, 설치 관련 식별자, 성능·사용량·오류 측정 정보를 진단·사용량 분석에 사용할 수 있음</td><td>Google LLC · <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a> · <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></td><td>Google LLC는 미국 소재이며 전 세계 서버에서 처리될 수 있음. 개별 국가는 특정되지 않음</td><td>QR 스캐너 사용 시 SDK 측정 정보가 HTTPS로 전송될 수 있음. QR 입력·결과 자체는 기기에서 처리</td><td>현재 공식 공개자료에서 이 앱이 사용하는 SDK 측정 정보의 고정 보유기간은 확인되지 않음</td><td>QR 스캐너를 사용하지 않을 수 있으며 다른 앱 기능은 계속 사용 가능</td></tr>
+              <tr><td>Android 운영체제 주소 변환</td><td>좌표를 주소로 변환하기 위해 Android <code>Geocoder</code> 구현이 좌표를 처리</td><td>기기·운영체제의 주소 변환 서비스 제공자. 앱 구현만으로 사업자·연락처를 확정할 수 없음</td><td>기기·운영체제 구현에 따라 달라 특정할 수 없음</td><td>사용자가 위치 기능을 실행하고 앱이 주소 변환 API를 호출할 때 네트워크가 사용될 수 있음</td><td>서비스 제공자별 정책에 따르며 현재 근거로 확인되지 않음</td><td>Android 위치 권한을 허용하지 않거나 관련 위치 기능을 사용하지 않을 수 있음</td></tr>
+              <tr><td>Android Sharesheet 및 수신 앱</td><td>사용자가 선택한 사진·PDF·ZIP·리포트 사본</td><td>사용자가 직접 선택한 앱·저장소·클라우드</td><td>선택한 수신자에 따라 다름</td><td>사용자가 공유·저장·내보내기를 확정할 때 운영체제 공유 기능으로 전달</td><td>선택한 수신자의 정책과 사용자 설정에 따름</td><td>공유를 취소하거나 전송 후 해당 수신 앱·저장 위치에서 사본을 직접 삭제</td></tr>
             </tbody>
           </table>
         </div>
-        <p>Firebase 공식 문서는 Crashlytics를 포함한 다수 Firebase 서비스가 Google의 글로벌 인프라에서 처리될 수 있음을 안내합니다. 각 외부 서비스의 데이터 처리와 보유에 관한 자세한 내용은 해당 서비스의 정책을 확인할 수 있습니다.</p>
+        <p>특정 국가·주소 변환 서비스 제공자·ML Kit 고정 보유기간처럼 공식 공개자료와 앱 설정만으로 확정되지 않는 값은 임의로 단정하지 않습니다. 위 기술적 사실을 대한민국 개인정보보호법상 어떤 유형으로 고지할지는 법률 검토가 남아 있습니다.</p>
       </section>
 
       <section>
